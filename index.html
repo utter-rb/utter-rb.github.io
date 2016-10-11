@@ -52,10 +52,12 @@
 	  <pre>
 <code class='bash'>$ gem install utter 
 $ utter --help
-$ utter new auth
+$ utter init 
 $ utter new service
 $ utter new domain
 $ utter new ext
+$ utter new auth-provider-service
+$ utter new auth-consumer-ext
 	  </code></pre>
 	</div>
 
@@ -66,32 +68,23 @@ $ utter new ext
 	Building a Microservice often requires the utilization of knowledge from a number of different domains.
 	Utter's Domain-specific Microservices are source code artifacts that focus on a specific core domain, 
 	while incorporating knowledge from other supporting, and generic domains, via extensions. 
+
 	Utter argues that a diversity of Domain-specific Microservices will positively influence the construction of software applications.
-	Hence, Utter intend to support microservice developers, via providing a generative approach for building Domain-specific Microservices that supports the following tents:
+	Hence, Utter intend to support microservice developers, 
+	via providing a generative approach for building Domain-specific Microservices that supports the following tents:
 
 	<dl>
 	  <dt>
 	  Everything is a Component
 	  </dt>
 	  Utter perceives a microservice project as a single service, a single domain, and a number of domain-extenstions.
-	  <br> 
-	  <br> 
 	  The service could have a number of endpoints that are part of the whole system API in production when mounted.
-	  <br> 
-	  <br> 
 	  The domain is an isolated bounded-context refined at well-balanced scale with respect to the whole system.
 	  The objective of this domain isolation is to limit complexity of a solution, 
 	  via providing the means for the domain-experts to engage in providing the solution.
 	  The domain could have a Domain-specific language (DSL) that aids in attaining experts' aid in tackling the domain challenges.
-	  <br> 
-	  <br> 
 	  Domain-extenstions are the means for incorportating knowledge from domains(supporting, generic) in a packagable manner.
-	  <br> 
-	  <br> 
-
 	  Usually your system will be composed out of a number of microservices. Each of those microservices shall contain a service component, a domain component, and a number of domain extenstion components. 
-	  <br> 
-	  <br> 
 
 	  <dt>
 	  Everything is Contextual
@@ -112,12 +105,6 @@ $ utter new ext
 	  Everything is Packageable
 	  </dt>
 	  Utter makes sure that every system component developed, is one command away form being packageable as a gem for extended reuse, among your team or the community as a whole.
-
-
-	  <dt>
-	  Everything is Independent
-	  </dt>
-	  Each Domain Extenstion has its own data presistance mechanism, so in one domain you might have multiple memory and file-based databases
 
 	</dl>
 
