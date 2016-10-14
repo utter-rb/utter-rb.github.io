@@ -5,18 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>utter - welcome</title>
     <link rel="icon" type="image/png" href="img/logo.png" />
-
-    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/main.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-      <![endif]-->
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-      <script src="javascripts/jquery.modal.js" type="text/javascript" charset="utf-8"></script>
+    <![endif]-->
 
-      <link rel="stylesheet" href="stylesheets/jquery.modal.css" type="text/css" media="screen" />
-      
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+
+
   </head>
   <body>
     <div class="wrapper">
@@ -120,11 +124,81 @@ $ utter auth-consumer-ext
 	<hr/>
 	<br>
 
-	<h3>Sample App</h3>
-	<p>
-	TODO add a hackspree tutorial link here.
-	<a href="sample.html" rel="modal:open">sample</a>
-	</p>
+	<h3>Sample Apps</h3>
+
+	<dl>
+	  <dt>
+	  Utter Classic-Style is well-suited to individuals for building domain-specific microservcies, <a class="modal-trigger waves-effect waves-light" href="#classic_sample">Check Sample</a>.
+	  </dt>
+	  <br>
+	  <br>
+	  <dt>
+	  Utter modular-style is well-suited to small teams for building independent utter domain-specific microservice components as distributable gems, <a class="modal-trigger waves-effect waves-light" href="#modular_sample">Check Sample</a>.
+	  </dt>
+	</dl>
+
+	<!-- classic_sample Modal Structure -->
+	<div id="classic_sample" class="modal modal-fixed-footer">
+	  <div class="modal-content">
+	    <h4>Utter Classic</h4>
+	    <p>A bunch of text</p>
+	    <p>A bunch of text</p>
+	    <p>A bunch of text</p>
+	    <div class="highlight">
+	      <pre> <code class='bash'>$ utter classic</code></pre>
+	    </div>
+	    <p>generate an utter classic-style project</p>
+
+	    <div class="highlight">
+	      <pre> <code class='bash'>$ utter package </code></pre>
+	    </div>
+	    <p>package an utter component as a gem</p>
+
+	    <div class="highlight">
+	      <pre> <code class='bash'>$ utter deploy </code></pre>
+	    </div>
+	    <p>deploy an utter container component</p>
+	  </div>
+	  <div class="modal-footer">
+	    <p class="modal-footer-content">
+	    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Awesome, Got it!</a>
+	    <h6> #utter @irc.freenode.net </h6>
+	    </p>
+	  </div>
+	</div>
+
+
+	<!-- modular_sample Modal Structure -->
+	<div id="modular_sample" class="modal modal-fixed-footer">
+	  <div class="modal-content">
+	    <h4>Utter Modular</h4>
+	    <p>A bunch of text</p>
+	    <p>A bunch of text</p>
+	    <p>A bunch of text</p>
+	    <div class="highlight">
+	      <pre> <code class='bash'>$ utter classic</code></pre>
+	    </div>
+	    <p>generate an utter classic-style project</p>
+
+	    <div class="highlight">
+	      <pre> <code class='bash'>$ utter package </code></pre>
+	    </div>
+	    <p>package an utter component as a gem</p>
+
+	    <div class="highlight">
+	      <pre> <code class='bash'>$ utter deploy </code></pre>
+	    </div>
+	    <p>deploy an utter container component</p>
+	  </div>
+	  <div class="modal-footer">
+	    <p class="modal-footer-content">
+	    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Awesome, Got it!</a>
+	    <h6> #utter @irc.freenode.net </h6>
+	    </p>
+	  </div>
+	</div>
+
+
 	<hr/>
 	<br>
 
@@ -172,7 +246,8 @@ $ utter auth-consumer-ext
 
       
       <footer>
-	<p> Utter is a Domain-specific Microservices Framework written in Ruby. 
+	<p> <h6> Utter is a Domain-specific Microservices Framework written in Ruby. 
+	</h6>
 	</p>
 	<a href="https://badge.fury.io/rb/utter"><img src="https://badge.fury.io/rb/utter@2x.png" alt="Gem Version" height="18"></a>
 

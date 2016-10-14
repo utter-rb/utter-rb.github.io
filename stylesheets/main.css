@@ -1,3 +1,5 @@
+
+
 /*@import url(https://fonts.googleapis.com/css?family=Lato:300italic,700italic,300,700);
 */
 @import url(https://fonts.googleapis.com/css?family=Orbitron:400,500,700,900);
@@ -303,3 +305,13 @@ footer {
     -moz-transform:rotate(360deg);
     -o-transform:rotate(360deg);
 } 
+
+.modal-footer-content{
+  vertical-align: middle
+  padding:50px;
+  font-family: "Maven Pro", "Helvetica", "Orbitron", 'Maven Pro';
+  letter-spacing: 2.2px;
+  line-height: 1.5;
+  color:#777;
+  font-weight:400;
+}
