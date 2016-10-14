@@ -93,10 +93,14 @@ $ utter auth-consumer-ext
 	Utter's Domain-specific Microservices are source code artifacts that focus on a specific core domain, 
 	while incorporating knowledge from other supporting, and generic domains, via extensions. 
 
+
 	<dl>
 	  <dt>
 	  Everything is a Component
 	  </dt>
+	  Utter components keeps a low line count as they are context specific thus approachable by new hires mapping to an overall low cost.
+
+	  Utter projects have high availability via modular, partial deployments of individual microservices.
 	  Utter perceives a microservice project as a single service, a single domain, and a number of domain-extenstions.
 	  The service could have a number of endpoints that are part of the whole system API in production when mounted.
 	  The domain is an isolated bounded-context refined at well-balanced scale with respect to the whole system.
@@ -105,6 +109,8 @@ $ utter auth-consumer-ext
 	  The domain could have a Domain-specific language (DSL) that aids in attaining experts' aid in tackling the domain challenges.
 	  Domain-extenstions are the means for incorportating knowledge from domains(supporting, generic) in a packagable manner.
 	  Usually your system will be composed out of a number of microservices. Each of those microservices shall contain a service component, a domain component, and a number of domain extenstion components. 
+	  Utter components are easily testable, with clear dependencies, and easy to understand as they follow a common functional interface structure.
+	  Utter components are independently replaceable and independently upgradable.
 	  Every component granularity is dictated via the role it acts, in relevance to the context in which it will be represented. 
 <!--
 	  <dt>
@@ -145,7 +151,15 @@ $ utter auth-consumer-ext
 	    <p>A bunch of text</p>
 	    <p>A bunch of text</p>
 	    <div class="highlight">
-	      <pre> <code class='bash'>$ utter classic</code></pre>
+	      <pre> <code class='ruby'>
+      	# Usage
+      	# Inbounds down the stack A -> B -> C, then Outbounds up the stack C -> B -> A
+ 	Utter::Stack.new do 
+     		use A                                                                                                                                              
+     		use B
+     		use C
+ 	end
+	      </code></pre>
 	    </div>
 	    <p>generate an utter classic-style project</p>
 
