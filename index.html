@@ -152,14 +152,14 @@ $ utter auth-consumer-ext
 	    <p>A bunch of text</p>
 	    <div class="highlight">
 	      <pre> <code class='ruby'>
-	      # Usage
-	      # Inbounds down the stack A -> B -> C, then 
-	      # Outbounds up the stack C -> B -> A
-	      Utter::Stack.new do
-	        use A
-		use B
-		use C
-	      end
+# Usage
+# Inbounds down the stack A -> B -> C, then 
+# Outbounds up the stack C -> B -> A
+Utter::Stack.new do
+ use A
+ use B
+ use C
+end
 	      </code></pre>
 	    </div>
 	    <p>generate an utter classic-style project</p>
