@@ -32,7 +32,12 @@
 
       </header>
       <section>
-	<h3>Welcome to Utter</h3>
+	<h3>Quick Start</h3>
+
+	<div class="highlight">
+	  <pre> <code class='bash'>$ gem install utter</code></pre>
+	</div>
+	<p>install the utter ruby gem on your system</p>
 
 	<div class="highlight">
 	  <pre> <code class='bash'>$ utter classic</code></pre>
@@ -49,55 +54,52 @@
 	</div>
 	<p>deploy an utter container component</p>
 
-	<hr/>
-	<br>
-
-	<h3>Quick Start</h3>
-
-	<div class="highlight">
-	  <pre>
-Classic-style
-<code class='bash'>$ gem install utter 
-$ utter classic 
-	  </code></pre>
-	</div>
-	<div class="highlight">
-	  <pre>
-Modular-style (Still in Experimental Stage)
-<code class='bash'>$ gem install utter 
-# Wizards through multiple utter components
-$ utter modular 
-# Wizards an individual utter component
-$ utter container 
-$ utter service
-$ utter domain
-
-# Your packged microservice can be installed and used
-$ gem install mycomapny::v1::transfers
-$ mycomapny::v1::transfers up
-$ mycomapny::v1::transfers down 
-$ mycomapny::v1::transfers status
-
-# Utter extenstions are middlewares that enables interoperability among core domain-knowledge, supporting domain-knoweldge, and generic domain-knowledge components; via providing the means for exchanging knowledge in a standardrized manner. 
-$ utter ext
-
-$ utter auth-provider-service
-$ utter auth-consumer-ext
-	  </code></pre>
-	</div>
+	<hr>
 	<hr/>
 	<br>
 
 	<h3>Philosophy</h3>
-	Building a Microservice often requires the utilization of knowledge from a number of different domains.
-	Utter's Domain-specific Microservices are source code artifacts that focus on a specific core domain, 
-	while incorporating knowledge from other supporting, and generic domains, via extensions. 
 
+	Utter Extenstions are software artifacts in the form of gems that act as bounded context knowledge extenstions form the core, supporting, and generic domains.
+
+	Building a Software System often requires the utilization of knowledge from a number of different domains.
+	An Utter Domain-specific Microservice is sourcecode artifact that encapsulates a Domain-driven Design bounded context of knowledge including its core domain, as well as supporting, and generic domains; all via middleware extensions.
+
+	context is the setting in which a word or statment appears that determines its meaning.
+	bounded context is the conditions(rules) under which a particular model is defined and applicable.
+
+	Utter components are software artifacts that consume and produce messages.
+
+	Utter project contains: service.rb, context.rb, core/, supporting/, generic/.
+
+	isolated logical domain models (bounded contexts), isolated autonmous teams, isolated datastores.
+
+	focus on a specific core domain, 
+	while incorporating knowledge from other supporting, and generic domains, via extensions. 
 
 	<dl>
 	  <dt>
+	  Components act as a Pure Functions
+	  </dt>
+	  clear ordering of what is going to happen, 
+	  very clear dependencies as they are pure functions (A pure function is a function where the return value is only determined by its input values, without observable side effects.),
+	  very easy to test,
+
+	  (Pure Functions are good!)
+	When a function performs any other “action”, apart from calculating its return value, the function is impure. It follows that a function which calls an impure function is impure as well. Impurity is contagious.
+
+Referential Transparency: Any invocation of an Utter component(pure function) can always be replaced by its result. 
+(write domain extenstion example) There’s no difference between Math.cos(Math::PI) and -1; we can always replace the first with the second. 
+
+Localized State: A pure function can only access what you pass it, so it’s easy to see its dependencies. We don’t always write functions like this. When a function accesses some other program state, such as an instance or global variable, it is no longer pure.
+
+
+
+	  <dt>
 	  Everything is a Component
 	  </dt>
+
+
 	  Utter components keeps a low line count as they are context specific thus approachable by new hires mapping to an overall low cost.
 
 	  Utter projects have high availability via modular, partial deployments of individual microservices.
@@ -150,6 +152,15 @@ $ utter auth-consumer-ext
 	    <p>A bunch of text</p>
 	    <p>A bunch of text</p>
 	    <p>A bunch of text</p>
+
+	    <div class="highlight">
+	      <pre>
+Classic-style
+<code class='bash'>$ gem install utter 
+$ utter classic 
+	      </code></pre>
+	    </div>
+
 	    <div class="highlight">
 	      <pre> <code class='ruby'>
 # Usage
@@ -177,7 +188,6 @@ end
 	  </div>
 	  <div class="modal-footer">
 	    <p class="modal-footer-content">
-	    Utter classic-style sample
 	    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Awesome, Got it!</a>
 	    </p>
 	  </div>
@@ -191,6 +201,31 @@ end
 	    <p>A bunch of text</p>
 	    <p>A bunch of text</p>
 	    <p>A bunch of text</p>
+	<div class="highlight">
+	  <pre>
+Modular-style (Still in Experimental Stage)
+<code class='bash'>$ gem install utter 
+# Wizards through multiple utter components
+$ utter modular 
+# Wizards an individual utter component
+$ utter container 
+$ utter service
+$ utter domain
+
+# Your packged microservice can be installed and used
+$ gem install mycomapny::v1::transfers
+$ mycomapny::v1::transfers up
+$ mycomapny::v1::transfers down 
+$ mycomapny::v1::transfers status
+
+# Utter extenstions are middlewares that enables interoperability among core domain-knowledge, supporting domain-knoweldge, and generic domain-knowledge components; via providing the means for exchanging knowledge in a standardrized manner. 
+$ utter ext
+
+$ utter auth-provider-service
+$ utter auth-consumer-ext
+	  </code></pre>
+	</div>
+
 	    <div class="highlight">
 	      <pre> <code class='bash'>$ utter classic</code></pre>
 	    </div>
@@ -246,12 +281,11 @@ end
 
 
 	<h3>Credits</h3>
-	<p> <a href="https://github.com/mitchellh">@mitchellh</a> - <strong>Rack Middleware as a General Purpose Abstraction - MountainWest RubyConf 2012</strong> </p>
-	<p> <a href="https://github.com/dwhelan">@dwhelan</a> & <a href="https://github.com/ericroberts">@ericroberts</a>- <strong>Domain Driven Design and Hexagonal Architecture with Rails - RailsConf Chicago 2014</strong> </p>
-	<p> <a href="https://github.com/richhickey">@richhickey</a> - <strong>Simplicity Matters - RailsConf Keynote Austin, Texas 2012 </strong> </p>
-	<p> <a href="https://github.com/emadb">@emadb</a> - <strong>Ruby loves DDD - RuPy Budapest, Hungary 2013</strong> </p>
+	<p> <a href="https://twitter.com/ericevans0">Eric Evans</a> - <strong> DDD & Microservices: At Last, Some Boundaries!</strong> </p>
+	<p> <a href="https://twitter.com/mitchellh">Mitchell Hashimoto </a> - <strong>Rack Middleware as a General Purpose Abstraction - MountainWest RubyConf 2012</strong> </p>
+	<p> <a href="https://twitter.com/richhickey">Rich Hickey</a> - <strong>Simplicity Matters</strong> </p>
 
-	<p> <a href="#">@uncle bob</a> - <strong>Keynote: Architecture the Lost Years</strong> </p>
+	<p> <a href="https://twitter.com/unclebobmartin">Robert Cecil Martin </a> - <strong>Architecture the Lost Years</strong> </p>
 	<br>
 	<hr/>
 	<br>
